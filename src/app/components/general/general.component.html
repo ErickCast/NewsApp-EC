@@ -1,0 +1,33 @@
+<div class="row my-5 text-center">
+  <div class="col-8">
+    <select name="" id="" value="" #select class="form-control w-25">
+
+      <option value="" (click)="getNews(select.value)">General</option>
+      <option value="&category=business" (click)="getNews(select.value)">Negocios</option>
+      <option value="&category=technology" (click)="getNews(select.value)">Tecnologia</option>
+      <option value="&category=health" (click)="getNews(select.value)">Salud</option>
+      <option value="&category=science" (click)="getNews(select.value)">Ciencia</option>
+      <option value="&category=sports" (click)="getNews(select.value)">Deportes</option>
+      <option value="&category=entertainment" (click)="getNews(select.value)">Entretenimiento</option>
+    </select>
+    <!--<button class="btn btn-primary">Mostrar noticias</button>-->
+  </div>
+  <div class="col-4">
+    
+      <input style="border-radius: 6px; border:1px solid black; padding: 7px;" type="search" name="buscar" id="" placeholder="Buscar Noticia" (click)="getNewsBytitle(buscar.value)" #buscar>
+  
+  </div>
+</div>
+
+<div class="row justify-content-around">
+    <div class="col-12 col-md-6 col-lg-4" *ngFor="let noticia of Thenews">
+        <div class="card" style="width: 18rem;">
+            <img [src]="noticia.urlToImage" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{noticia.title}}</h5>
+              <p class="card-text">{{noticia.description}}</p>
+              <a href="{{noticia.url}}" target="_blank" class="btn btn-primary btn-block">Ver Noticia Completa</a>
+            </div>
+          </div>
+    </div>
+</div>
